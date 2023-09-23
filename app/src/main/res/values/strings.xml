@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BankAppChallenge</string>
+    <string name="action_top_up">Top up</string>
+    <string name="action_pay">Pay</string>
+    <string name="action_send">Send</string>
+    <string name="action_more">More</string>
 </resources>

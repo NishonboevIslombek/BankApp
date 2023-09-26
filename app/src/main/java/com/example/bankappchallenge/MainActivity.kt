@@ -5,8 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import com.example.bankappchallenge.ui.composables.transfer.SearchBarSection
-import com.example.bankappchallenge.ui.composables.transfer.TransferScreenPortrait
+import com.example.bankappchallenge.ui.composables.transfer.TransferAccountCard
+import com.example.bankappchallenge.ui.composables.transfer.TransferDetailsScreenPortrait
+import com.example.bankappchallenge.ui.composables.transfer.TransferSuccessScreenPortrait
 import com.example.bankappchallenge.ui.theme.BankAppChallengeTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +16,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             BankAppChallengeTheme {
                 Surface(color = MaterialTheme.colorScheme.primary) {
-                    TransferScreenPortrait()
+                    TransferSuccessScreenPortrait()
                 }
             }
         }

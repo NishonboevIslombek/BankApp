@@ -1,4 +1,4 @@
-package com.example.bankappchallenge.ui.composables
+package com.example.bankappchallenge.ui.composables.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -13,13 +13,18 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun HomePortrait(modifier: Modifier = Modifier) {
     Scaffold(bottomBar = { BottomNavigationBar() }) {
-        HomeScreen(modifier = Modifier.padding(it))
+        HomeScreen(
+            modifier = Modifier
+                .padding(it)
+        )
     }
 }
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
-    Column(modifier = Modifier) {
+fun HomeScreen(modifier: Modifier) {
+    Column(
+        modifier = Modifier
+    ) {
         TopBarSection(modifier = Modifier.padding(top = 16.dp))
         MyCardsRow(modifier = Modifier.padding(top = 32.dp))
         ServicesRow(modifier = Modifier.padding(top = 48.dp))

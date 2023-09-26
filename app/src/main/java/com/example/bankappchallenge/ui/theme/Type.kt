@@ -24,6 +24,7 @@ val fontFamilyPoppinsRegular = FontFamily(
 )
 
 val Typography = Typography(
+
     labelLarge = TextStyle(
         fontFamily = fontFamilyPoppinsSemiBold,
         fontWeight = FontWeight.Normal,
@@ -52,6 +53,11 @@ val Typography = Typography(
     ),
     titleSmall = TextStyle(
         fontFamily = fontFamilyPoppinsSemiBold,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = fontFamilyPoppinsRegular,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp
     ),

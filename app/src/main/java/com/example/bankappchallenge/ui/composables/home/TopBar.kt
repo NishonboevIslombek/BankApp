@@ -1,4 +1,4 @@
-package com.example.bankappchallenge.ui.composables
+package com.example.bankappchallenge.ui.composables.home
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding

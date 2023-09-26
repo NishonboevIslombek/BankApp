@@ -1,4 +1,4 @@
-package com.example.bankappchallenge.ui.composables
+package com.example.bankappchallenge.ui.composables.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -6,10 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
@@ -36,8 +34,7 @@ fun RecentTransactionsSection(modifier: Modifier = Modifier) {
         shape = MaterialTheme.shapes.large,
         modifier = modifier
             .fillMaxSize()
-            .padding(top = 20.dp)
-            .shadow(8.dp, shape = MaterialTheme.shapes.large)
+            .shadow(8.dp, shape = MaterialTheme.shapes.extraLarge)
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,7 +75,7 @@ fun RecentTransactionsSection(modifier: Modifier = Modifier) {
 fun TransactionsColumn(modifier: Modifier = Modifier) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(16.dp),
-        contentPadding = PaddingValues(vertical = 24.dp),
+        contentPadding = PaddingValues(vertical = 6.dp),
         modifier = modifier
     ) {
         items(50) {

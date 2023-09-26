@@ -19,11 +19,14 @@ import androidx.core.view.WindowCompat
 
 private val LightColorScheme = lightColorScheme(
     primary = Color.White,
+    onPrimary = Color.Black,
     secondary = PrimaryBlue,
-    tertiary = Gray,
+    tertiary = LightGray,
+    onTertiary = Gray,
     background = LightBlue,
     surface = Color.White,
-    onSecondary = MediumGray
+    onSecondary = MediumGray,
+    onSecondaryContainer = Color.White
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -57,4 +60,13 @@ fun BankAppChallengeTheme(
         shapes = shapes,
         content = content
     )
+}
+
+@Composable
+fun SetStatusBarColor(color: Color) {
+    val view = LocalView.current
+    SideEffect {
+        val window = (view.context as Activity).window
+        window.statusBarColor = color.toArgb()
+    }
 }

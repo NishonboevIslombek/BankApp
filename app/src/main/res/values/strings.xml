@@ -4,4 +4,8 @@
     <string name="action_pay">Pay</string>
     <string name="action_send">Send</string>
     <string name="action_more">More</string>
+    <string name="label_accounts">Accounts</string>
+    <string name="label_statistics">Statistics</string>
+    <string name="label_cashback">Cashback</string>
+    <string name="label_settings">Settings</string>
 </resources>

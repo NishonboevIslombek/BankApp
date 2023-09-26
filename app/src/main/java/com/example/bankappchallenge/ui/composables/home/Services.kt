@@ -1,4 +1,4 @@
-package com.example.bankappchallenge.ui.composables
+package com.example.bankappchallenge.ui.composables.home
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,25 +23,37 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.bankappchallenge.R
+import com.example.bankappchallenge.data.model.ServiceItem
 
 @Composable
-fun ServicesRow(modifier: Modifier = Modifier) {
+fun ServicesRow(modifier: Modifier = Modifier, onServiceClicked: (id: Int) -> Unit) {
     Row(
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
     ) {
-        ServiceElement(title = R.string.action_top_up, icon = R.drawable.ic_payment)
-        ServiceElement(title = R.string.action_pay, icon = R.drawable.ic_receipt)
-        ServiceElement(title = R.string.action_send, icon = R.drawable.ic_send)
-        ServiceElement(title = R.string.action_more, icon = R.drawable.ic_table)
+        testServiceList.forEach {
+            ServiceElement(
+                title = it.title,
+                icon = it.icon,
+                onServiceClicked = { onServiceClicked(it.id) }
+            )
+        }
     }
 }
 
 @Composable
-fun ServiceElement(@StringRes title: Int, @DrawableRes icon: Int, modifier: Modifier = Modifier) {
-    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+private fun ServiceElement(
+    @StringRes title: Int,
+    @DrawableRes icon: Int,
+    modifier: Modifier = Modifier,
+    onServiceClicked: () -> Unit
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
+    ) {
         Image(
             painter = painterResource(id = icon),
             contentDescription = "Service Payment",
@@ -53,6 +66,7 @@ fun ServiceElement(@StringRes title: Int, @DrawableRes icon: Int, modifier: Modi
                     ambientColor = Color.Gray
                 )
                 .background(color = Color.White, shape = CircleShape)
+                .clickable { onServiceClicked() }
                 .padding(20.dp)
         )
         Text(
@@ -62,3 +76,26 @@ fun ServiceElement(@StringRes title: Int, @DrawableRes icon: Int, modifier: Modi
         )
     }
 }
+
+private val testServiceList = listOf(
+    ServiceItem(
+        id = 0,
+        title = R.string.action_top_up,
+        icon = R.drawable.ic_payment
+    ),
+    ServiceItem(
+        id = 1,
+        title = R.string.action_pay,
+        icon = R.drawable.ic_receipt
+    ),
+    ServiceItem(
+        id = 2,
+        title = R.string.action_send,
+        icon = R.drawable.ic_send
+    ),
+    ServiceItem(
+        id = 3,
+        title = R.string.action_more,
+        icon = R.drawable.ic_table
+    )
+)

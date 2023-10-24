@@ -19,7 +19,7 @@ import com.example.bankappchallenge.R
 import com.example.bankappchallenge.ui.theme.SetStatusBarColor
 
 @Composable
-fun TransferSuccessScreenPortrait() {
+fun TransferSuccessScreenPortrait(onCloseClicked: () -> Unit) {
     SetStatusBarColor(color = MaterialTheme.colorScheme.primary)
     Surface(
         color = MaterialTheme.colorScheme.primary,
@@ -31,6 +31,7 @@ fun TransferSuccessScreenPortrait() {
         ) {
             TransferSuccessMassage()
             TransferSuccessButton(
+                onClick = onCloseClicked,
                 modifier = Modifier
                     .align(alignment = Alignment.BottomCenter)
                     .padding(bottom = 22.dp)
@@ -64,7 +65,7 @@ fun TransferSuccessMassage(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TransferSuccessButton(modifier: Modifier = Modifier) {
+fun TransferSuccessButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
@@ -74,6 +75,6 @@ fun TransferSuccessButton(modifier: Modifier = Modifier) {
             style = MaterialTheme.typography.labelMedium.copy(color = MaterialTheme.colorScheme.secondary),
             modifier = Modifier.padding(bottom = 32.dp)
         )
-        TransferSendButton(label = "Close")
+        TransferSendButton(label = "Close", onClick = onClick)
     }
 }
